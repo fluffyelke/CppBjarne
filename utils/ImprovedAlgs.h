@@ -15,7 +15,7 @@
 #define IMPROVEDALGS_H
 
 #include <algorithm>
-
+#include <iostream>
 
 namespace Utils {
     
@@ -33,6 +33,18 @@ namespace Utils {
     void sort(T& obj, Pred op) {
         std::sort(obj.begin(), obj.end(), op);
     }
+    
+    /**
+     * Example of std::move();   //providing a way for rvalue reference, using move constructors
+     * @param obj
+     * @return 
+     */
+    template<typename T>
+    T&& myMove(const T& obj) {
+        return static_cast<T&&>(obj);
+    }
+    
+    
 }
 
 #endif /* IMPROVEDALGS_H */
