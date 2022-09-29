@@ -45,6 +45,15 @@ namespace Utils {
     }
     
     
+    template<typename Target, typename Source>
+    Target narrowCast(Source value) {
+        auto newValue = static_cast<Target>(value);
+        if(static_cast<Source>(newValue) != value) {
+            throw std::runtime_error ("narrowCast<>() failed");
+        }
+        return newValue;
+    }
+    
 }
 
 #endif /* IMPROVEDALGS_H */

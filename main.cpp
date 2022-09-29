@@ -12,6 +12,7 @@
  */
 
 #include <cstdlib>
+#include "utils/Macros.h"
 #include "utils/ImprovedAlgs.h"
 #include "RNGGenerator.h"
 #include "Part1Introduction/C02CppBasics/Basics.h"
@@ -27,6 +28,9 @@
 #include "Part2Basics/C10Expressions/C10Expressions.h"
 #include "Part2Basics/C10Expressions/C10Excercises.h"
 #include "Part2Basics/C11SelectOperations/C11SelectOperations.h"
+#include "Part2Basics/C11SelectOperations/C11Excercises.h"
+#include "Part2Basics/C12Functions/C11Functions.h"
+#include "Part2Basics/C12Functions/C12Excercises.h"
 
 using namespace std;
 
@@ -159,7 +163,31 @@ void c11SelectOps() {
         C11SelectOperations::examples();
     };
     
-    runExamples();
+    auto runExcercises = [] () -> void {
+//        C11Ex::ex01(); 
+//        C11Ex::ex02(); 
+//        C11Ex::ex03();
+    };
+    
+//    runExamples();
+    runExcercises();
+}
+
+void c12Functions() {
+    
+    auto runExamples = [] () -> void {
+       C11Functions::examples();  
+    };
+    
+    auto runExcercises = [] () -> void {
+//        C12Ex::ex01();
+//        C12Ex::ex08();
+//        C12Ex::ex09();
+//        C12Ex::ex10();
+        C12Ex::ex21();
+    };
+    
+    runExcercises();
 }
 void part02() {
     
@@ -168,13 +196,31 @@ void part02() {
 //    c08StructuresUnionsEnumerations();
 //    c09Statements();
 //    c10Expressions(); 
-    c11SelectOps();
+//    c11SelectOps();
+    c12Functions();
 }
 
+void macros() {
+    auto runMacros = [] () -> void {
+        PreDefMacros::printDate();    
+        PreDefMacros::printTime();
+        PreDefMacros::printCurrSourceFile();
+        PreDefMacros::printLine();
+        PreDefMacros::printCurrFuncName();
+        PreDefMacros::printFunction();
+        PreDefMacros::printPrettyFunction();
+        PreDefMacros::printLog();
+    };
+    runMacros();
+}
 int main(int argc, char** argv) {
 
     part02();
-
+//    C12Ex::ex03(argc, argv);
+//    C12Ex::readFilesFromCommandLine(argc, argv);  //project/properties/run/ Run Command //add file paths there.
+//    C12Ex::ex10(argc, argv);
+//    macros();
+    
     return 0;
 }
 
